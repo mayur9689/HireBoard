@@ -1,0 +1,469 @@
+/* Hero */
+.app__hero {
+  background: linear-gradient(135deg, #16443a 0%, #1f6f5c 100%);
+  color: #ffffff;
+  padding: 64px 24px 56px;
+  text-align: center;
+}
+
+.app__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: #a8d8cc;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.app__hero .app__title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.app__hero .app__subtitle {
+  margin: 10px auto 0;
+  max-width: 460px;
+  color: #cfe9e1;
+  font-size: 1.02rem;
+}
+
+.app__body {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* Search & filter bar */
+.search-filter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: -40px;
+  margin-bottom: 32px;
+  background: var(--color-surface);
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(22, 68, 58, 0.12);
+}
+
+.search-filter__input {
+  flex: 2 1 200px;
+  padding: 11px 14px;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  background: var(--color-bg);
+  font-size: 0.95rem;
+  color: var(--color-ink);
+}
+
+.search-filter__select {
+  flex: 1 1 130px;
+  padding: 11px 14px;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  background: var(--color-bg);
+  font-size: 0.95rem;
+  color: var(--color-ink);
+}
+
+.search-filter__input:focus,
+.search-filter__select:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+/* Results */
+.app__status {
+  color: var(--color-ink-soft);
+  padding: 24px 0;
+  text-align: center;
+}
+
+.app__count {
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+  margin: 0 0 14px;
+}
+
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 640px) {
+  .job-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Job card */
+.job-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 8px;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.job-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(28, 30, 34, 0.08);
+}
+
+.job-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.job-card__title {
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+.job-card__company {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.job-card__dot {
+  margin: 0 2px;
+}
+
+.job-card__type {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.job-card__description {
+  margin: 12px 0 14px;
+  font-size: 0.87rem;
+  line-height: 1.5;
+  color: var(--color-ink);
+  flex-grow: 1;
+}
+
+.job-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.job-card__skills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.job-card__skill-tag {
+  font-size: 0.72rem;
+  padding: 3px 9px;
+  border-radius: 5px;
+  background: var(--color-tag-bg);
+  color: var(--color-ink-soft);
+}
+
+.job-card__posted {
+  font-size: 0.75rem;
+  color: var(--color-ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.icon {
+  flex-shrink: 0;
+  vertical-align: -2px;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.pagination__button {
+  padding: 8px 16px;
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.pagination__button:hover:not(:disabled) {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.pagination__button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination__status {
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 22, 26, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+}
+
+.modal {
+  background: var(--color-surface);
+  border-radius: 12px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--color-ink-soft);
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.modal__title {
+  font-size: 1.4rem;
+  margin: 12px 0 4px;
+}
+
+.modal__company {
+  color: var(--color-ink-soft);
+  font-size: 0.92rem;
+  margin: 0 0 14px;
+}
+
+.modal__meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.modal__meta-item {
+  font-size: 0.82rem;
+  color: var(--color-ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.modal__description {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-ink);
+  margin-bottom: 20px;
+}
+
+.modal__section-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: var(--color-ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.modal__skills-block {
+  margin-bottom: 24px;
+}
+
+.modal__apply-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--color-accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal__apply-btn:hover {
+  background: #185a49;
+}
+
+@media (max-width: 480px) {
+  .app__hero {
+    padding: 48px 16px 48px;
+  }
+  .app__hero .app__title {
+    font-size: 2rem;
+  }
+  .app__body {
+    padding: 32px 16px 60px;
+  }
+  .job-card__header {
+    flex-direction: column;
+  }
+}
+
+/* Login page */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #16443a 0%, #1f6f5c 100%);
+  padding: 20px;
+}
+
+.login-card {
+  background: var(--color-surface);
+  border-radius: 14px;
+  padding: 40px 36px;
+  max-width: 380px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.login-card .app__eyebrow {
+  color: var(--color-accent);
+}
+
+.login-card__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 6px 0 4px;
+  color: var(--color-ink);
+}
+
+.login-card__subtitle {
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+  margin: 0 0 24px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form__label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 6px;
+  margin-top: 14px;
+}
+
+.login-form__label:first-of-type {
+  margin-top: 0;
+}
+
+.login-form__input {
+  padding: 11px 14px;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  background: var(--color-bg);
+  font-size: 0.95rem;
+  color: var(--color-ink);
+}
+
+.login-form__input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.login-form__error {
+  color: #b3261e;
+  font-size: 0.82rem;
+  margin: 10px 0 0;
+}
+
+.login-form__submit {
+  margin-top: 22px;
+  padding: 12px;
+  background: var(--color-accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-form__submit:hover {
+  background: #185a49;
+}
+
+.login-card__note {
+  margin: 20px 0 0;
+  font-size: 0.78rem;
+  color: var(--color-ink-soft);
+  text-align: center;
+}
+
+/* Logout button in hero */
+.app__hero {
+  position: relative;
+}
+
+.app__logout {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.app__logout:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
